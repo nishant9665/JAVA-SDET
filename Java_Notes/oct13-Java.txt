@@ -1,0 +1,509 @@
+
+
+// Java program to sort the elements in descending order
+import java.util.*;
+
+class GFG {
+	public static void main(String[] args)
+	{
+
+		// Initializing the array
+		Integer array[] = { 1, 2, 3, 4, 5 };
+
+		// Sorting the array in descending order
+		Arrays.sort(array, Collections.reverseOrder());
+
+		// Printing the elements
+		System.out.println(Arrays.toString(array));
+	}
+}
+
+---------
+In general, both equals() and “==” operators in Java are used to compare objects to check equality, but here are some of the differences between the two: 
+
+The main difference between the .equals() method and == operator is that one is a method, and the other is the operator.
+We can use == operators for reference comparison (address comparison) and .equals() method for content comparison. In simple words, == checks if both objects point to the same memory location whereas .equals() evaluates to the comparison of values in the objects.
+
+------------
+
+
+package collections_example;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ArrayListTest {
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> list=new ArrayList<String>();//Creating arraylist  
+        list.add("Ravi");//Adding object in arraylist  
+        list.add("Vijay");  
+        list.add("John");  
+        list.add("Ajay");  
+     
+     
+        System.out.println("This is simple for loop");     
+     // by using for loop iterator
+     
+     for (int i =0 ;i<list.size();i++) {
+    	 
+    	 System.out.println(list.get(i));
+     }
+     
+     System.out.println(list.size());
+     
+     // by using while loop
+     System.out.println("This is simple while loop");
+     int a =0 ;
+     while(list.size()>a) {
+    	 System.out.println(list.get(a));
+    	 a++;
+     }
+     
+     // by using for each loop
+     System.out.println("This is for each loop");
+     
+     for (String str:list) {
+    	 System.out.println(str);
+     }
+     
+     // by using iterator
+     System.out.println("This is for iterator loop");
+     Iterator<String> itr =list.iterator();
+     while(itr.hasNext()) {
+    	 System.out.println(itr.next());
+     }
+     
+     
+  	}
+
+}
+-------------------------------------
+JAVA Program:
+package test;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+	// Reverse String
+		
+		String str ="Nishant";
+		String stl=str.toLowerCase();
+		String empt="";
+		char ch [] =stl.toCharArray();
+		
+		for (int i =stl.length()-1;i>=0;i--) {
+			empt=empt+ch[i];
+		}
+		System.out.println(empt);	
+		
+		
+		// Reverse string with same positions
+		
+		String str2 ="Nishant Narwade";
+		String[] strx= str2.split(" ");
+		String emptx="";
+		
+		for (int i =0;i<strx.length;i++) {
+			int count=1;
+			
+			String st=strx[i];
+			char chx [] =st.toCharArray();
+			
+			for (int j=st.length()-1;j>=0;j--) {
+				emptx=emptx+chx[j];
+			}
+			count=count+1;
+			if(count>1) {
+				emptx=emptx+" ";
+			}
+			
+		}
+		System.out.println(emptx);
+		
+		
+	}
+	
+	
+	
+	
+	
+
+}
+-----------------------------------
+tnahsin
+tnahsiN edawraN 
+
+-------------------------------------------------
+
+
+package test;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+	 String str = "Nishant@Narwade#$Tamsa%1234"; // Nishant Narwade Tamsa
+		
+	String abc = str.replaceAll("[^a-zA-Z0-9]"," ");
+	
+	boolean containCheck= abc.contains("Tamsa");
+	
+	System.out.println(containCheck);
+	
+	System.out.println(abc);
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+
+}
+-----------------------
+package test;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+	 int num =8435;
+	
+	 
+	 int rev =0 ;
+	 while(num>0) {
+		 
+		int rem= num %10 ;
+		rev = rem+(rev*10);
+		num= num /10;
+	 }
+		System.out.println(rev);
+		
+		
+	}
+	
+	
+	
+	
+	
+
+}
+
+---------------------
+Amstrong number:
+package test;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+	 int num =153;
+	 int rev =0 ;
+	 while(num>0) {
+		 
+		int rem= num %10 ;
+		rev = rev+(rem*rem*rem);
+		num= num /10;
+	 }
+		System.out.println(rev);		
+	}
+}
+-----------------------
+package test;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+			
+		int [] arr = {20,4,7,12,15,33,17,45,21};
+		int max = arr[0];
+		
+		int min = arr[0];
+		
+		// for max arrays
+		for (int i=0;i<arr.length;i++) {
+			if(arr[i]>max) {
+				max= arr[i];
+			}
+		}
+		System.out.println(max);
+		
+		for (int i=0;i<arr.length;i++) {
+			if(arr[i]<min) {
+				min= arr[i];
+			}
+		}
+		System.out.println(min);
+	}
+}
+--------------------
+Asending order and desending order:
+package test;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+			
+		int [] arr = {20,4,7,12,15,33,17,45,21};
+		
+		int i , j ,temp;
+		for (i=0;i<arr.length;i++) {
+			
+			for(j=i+1;j<arr.length;j++) {
+				if(arr[i]>arr[j]) {
+					
+					temp =arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+				
+			}
+		}
+		for(int k=0;k<arr.length;k++) {
+			System.out.println(arr[k]);
+		}
+		
+		System.out.println("--------------------------------------");
+        for (i=0;i<arr.length;i++) {
+			
+			for(j=i+1;j<arr.length;j++) {
+				if(arr[i]<arr[j]) {
+					
+					temp =arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+				
+			}
+		}
+        for(int k=0;k<arr.length;k++) {
+			System.out.println(arr[k]);
+		}
+	}
+}
+----------------
+package test;
+
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+	Scanner sc = new Scanner(System.in);	
+	System.out.println("Enter the number : ");
+	int num =  sc.nextInt();
+	int count=1;
+	for(int i=2;i<num;i++) {
+		if(num%i==0) {
+			count=count+1;
+			break;
+		}
+	}
+	if(count==1) {
+		System.out.println("This is prime number :"+num);
+	}
+	else {
+		System.out.println("This is not a prime number: "+num);
+	}
+	
+	}
+}
+-----------------------------------
+package test;
+
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+       Scanner sc = new Scanner(System.in);
+      // System.out.println("Enter the name :");
+     //  String name = sc.nextLine();
+       
+       String str ="niaaaaaasahanaaassssssssssst";
+       
+       char ch[]= str.toCharArray();
+       for(int i=0;i<ch.length;i++) {
+    	   for(int j=i+1;j<ch.length;j++) {
+    		   if(ch[i]==ch[j]) {
+    			   ch[i]='0';
+    		   }
+    	   }
+    	   if(ch[i]!='0') {
+    		   System.out.println(ch[i]);
+    	   }
+    	   
+       }
+       
+       
+       
+	
+	}
+}
+-----------------------
+count of duplicate char
+package test;
+
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+       Scanner sc = new Scanner(System.in);
+      // System.out.println("Enter the name :");
+     //  String name = sc.nextLine();
+       
+       String str ="niaaaaaasahanaaassssssssssst";
+       
+       char ch[]= str.toCharArray();
+       for(int i=0;i<ch.length;i++) {
+    	   int count=1;
+    	   for(int j=i+1;j<ch.length;j++) {
+    		   if(ch[i]==ch[j]) {
+    			   count++;
+    			   ch[j]='0';
+
+    			   
+    		   }
+    	   }
+    	   
+    	   if(count>=1 && ch[i]!='0') {
+    		   System.out.println("this is char :"+ch[i]+"  and count is "+count);
+    	   }
+    	   
+       }
+       
+       
+       
+	
+	}
+}
+-----------------------
+class Main {  
+  public static void main(String args[]) { 
+    
+    for (int i =0 ;i<5;i++){
+
+      for(int j=0;j<i+1;j++){
+        System.out.print("*");
+      }
+      System.out.println("");
+    }
+
+    
+    System.out.println("----------Part2---------");
+    int a =0;
+    int b=0;
+    int c =1;
+
+    for (int i=0;i<5;i++){
+
+      a=b;
+      b=c;
+      c=a+b;
+    System.out.print(a+" ");
+      
+    }
+
+    System.out.println("-----------Main part------");
+
+     a =0;
+     b=0;
+     c =1;
+      for (int i =0 ;i<5;i++){
+       
+      for(int j=0;j<i+1;j++){
+        a=b;
+        b=c;
+        c=a+b;
+       // System.out.print("*");
+         System.out.print(a);
+      }
+        
+      System.out.println("");
+    }
+
+    
+    
+  } 
+}
+// 0 1 1 2 3 5 8
+-------------------------
+
+package sampleAPI;
+
+public class Test {
+
+	//Following program converts alternate characters of a string to Upper Case.
+	public static void main(String[] args) {
+		//Input - MynameisNishant
+		//Output - MyNaMeIsNiShAnT
+		
+		String str ="MynameisNishant";
+		
+		String tempstr=str.toLowerCase();
+		char ch[]=tempstr.toCharArray();
+		
+		 String empt="";
+		for (int i=0;i<ch.length;i++) {
+			
+			if(i%2==0) {
+				empt=empt+Character.toUpperCase(ch[i]);
+			}
+			  else {
+				  empt=empt+(ch[i]);
+				    
+			  }
+			 
+		}
+		System.out.println(empt);
+		
+
+	}
+
+}
+---------------
+String is anagram or not:
+String s1="triangle";
+				char [] ch1=s1.toCharArray();
+				String s2="integral";
+				char [] ch2=s2.toCharArray();
+
+				boolean falg=false;
+				String empt="";
+				for (int i=0;i<ch1.length;i++ ){ //t
+				     for(int j=0;j<ch2.length;j++){ //i
+				       if(ch1.length==ch2.length) {
+				           if(ch1[i]==ch2[j]){
+				           empt=empt+ch1[i];
+				           } 
+				      }
+				        }
+				   
+				     } 
+				
+				if(empt.length()==s1.length()){
+					System.out.println(empt);
+				System.out.println("This is Anagram");
+				}
+				else{
+				System.out.println("This is not Anagram");
+				}
+				   
+				 }
+
+	   
+	}
+-----------------------------------------------
+
+

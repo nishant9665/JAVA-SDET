@@ -1,0 +1,60 @@
+ Login Test Cases
+A. Functional test cases:
+1. valid un/pwd +ve
+2. invalid un/pwd -ve
+3. valid un but invalid pwd -ve
+4. blank un/pwd -ve
+5. blank un but some pwd --ve
+6. valid un and blank pwd -ve
+7. forgot password  feature test +ve
+8. after forgot pwd, user should be able to login +ve
+9. Reset Password +ve
+10. inavlid use cases -- messages on the UI -ve
+11. valid un/pwd -- on home page -- check valid username
+12. Remember me -- +ve
+13. SSO - Single Sign On -- +ve
+14. check password field -- ***** or ....
+15. Show password -- Test123
+16. Enter key +ve
+17. password policy: more than 8 characters
+ --only alphanumeric combination
+ --No @#$ chars allowed
+ --Easy, Medium, Strong, Very Strong
+18. Click on Back Button after logged out -ve
+19. check password in browser cache/cookies +ve
+20. expired password -ve
+21. blocked user:
+ --for life time blocked
+ --for 24 hrs or for sometime blocking
+22. check login feature on different browsers
+23. check login on different devices : ios/Android/tablet
+24. User validation in DB: 
+ --DL/Passport/Doc is missing
+ --Email Confirmation is pending
+25. Email notificaion for login/password +ve
+26. logged in FF with UN1, open a new tab, try to 
+login with UN2 -ve
+27. Session Expired -- -ve
+ --30 mins, 1 hr, 15 mins, 10 mins
+28. on Differnt browsers
+
+B. Non Functional test cases: Performance, Security
+1. should not take time to login to app
+2. usability testing -- proper validation messgs
+3. Alignment, look and feel 
+4. Password policy: should be followed
+5. SQL Injection: 
+6. SSL certificate testing
+7. In backend: on PROD, customer password should not be logged in logs
+8. Encryption and decryption of the password:
+ Test123 -- 2345@%@#$%23$%@#$%SFGSG
+9. India -- logged in to APP
+ and at the same time
+ Germnay -- logged into APP
+
+10. history of login details
+11. Mobile App -- Samsung login
+ --Apple iphone 8: login 
+12. unsuccessful login attempts: 
+ --3 times wrong password: 1 hr blocked
+ --10 times wrong pwd: blocked for 1 hr
